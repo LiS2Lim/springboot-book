@@ -9,7 +9,6 @@ import lombok.*;
 
 @Entity
 @Data
-@Builder
 public class BookEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -22,4 +21,6 @@ public class BookEntity {
 
     @CreationTimestamp
     private LocalDateTime createdDate;
+
+    public BookEntity() {}
 }

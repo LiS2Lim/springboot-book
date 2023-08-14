@@ -17,10 +17,9 @@ public class BookService {
     }
 
     public Integer insert(BookCreateDTO bookCreateDTO) {
-        BookEntity book = BookEntity.builder()
-            .title(bookCreateDTO.getTitle())
-            .price(bookCreateDTO.getPrice())
-            .build();
+        BookEntity book = new BookEntity();
+            book.setTitle(bookCreateDTO.getTitle());
+            book.setPrice(bookCreateDTO.getPrice());
         this.bookRepository.save(book);
         return book.getBookId();
     }
